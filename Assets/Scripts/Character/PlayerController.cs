@@ -42,12 +42,14 @@ public class PlayerController : MonoBehaviour
     private bool canLeftBody = false;
     private bool isTouchingFloor;
     private bool canDoubleJump;
+    private Transform feetCheck;
     private Vector3 originalScale;
     public Vector3 smallScale;
     private Transform wallCheck;
     private EnemyData enemyData;
     private bool isSmall = false;
     private bool isRunning = false;
+    private bool isGrounded;
     private int jumpCounter;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
         enemyData = current.GetComponent<EnemyData>();
         initialGravityScale = currentRB.gravityScale;
         wallCheck = current.transform.Find("WallCheck");
+        feetCheck = current.transform.Find("Feet");
     }
 
     private void Start()
@@ -67,6 +70,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ChangeBody();
+        FindFeetCollider();
+        Debug.Log(isGrounded);
+
         if(enemyData.canBeSmall) {
             ChangeSize();
         }
@@ -137,6 +143,7 @@ public class PlayerController : MonoBehaviour
                     current = colliders[0].gameObject;
                     enemyData = current.GetComponent<EnemyData>();
                     wallCheck = current.transform.Find("WallCheck");
+                    feetCheck = current.transform.Find("Feet");
                     currentRB = current.GetComponentInChildren<Rigidbody2D>();
                     currentRB.velocity = new Vector2(currentRB.velocity.x, currentRB.velocity.y + 2f);
                     mainObject.gameObject.SetActive(false);
@@ -145,6 +152,7 @@ public class PlayerController : MonoBehaviour
                     current = colliders[0].gameObject;
                     enemyData = current.GetComponent<EnemyData>();
                     wallCheck = current.transform.Find("WallCheck");
+                    feetCheck = current.transform.Find("Feet");
                     currentRB = current.GetComponentInChildren<Rigidbody2D>();
                     currentRB.velocity = new Vector2(currentRB.velocity.x, currentRB.velocity.y + 2f);
                 }
@@ -159,6 +167,19 @@ public class PlayerController : MonoBehaviour
         else{
             isRunning = false;
         }
+    }
+    
+    private void FindFeetCollider() {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(feetCheck.transform.position ,0.5f);
+        foreach (Collider2D collider in colliders)
+        {
+            Debug.Log(feetCheck);
+            if(collider.gameObject.tag == "Ground") {
+                isGrounded = true;
+                return;
+            }            
+        }
+        isGrounded = false;
     }
 
     private void ChangeSize()
@@ -189,7 +210,7 @@ public class PlayerController : MonoBehaviour
         currentRB.velocity  = new Vector2(moveValue.x * moveSpeed, currentRB.velocity.y);
     }
     private void Jump() {
-        if(FloorTouching.isTouchingFloor) {
+        if(isGrounded) {
             coyotaTimeCounter = coyotaTime;
             jumpCounter = 0;
         }
