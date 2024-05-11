@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a2f605caaf8284e883e4f25391170d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRunFast: 0
+  canRunFast: 1
   canSwim: 0
   isJumpMaster: 1
   canBeSmall: 0
@@ -1226,6 +1226,7 @@ MonoBehaviour:
   glidingSpeed: 1
   wallSlideSpeed: 2
   swimmingSpeed: 3
+  runningSpeed: 2
   extendCircle: {x: 0.55, y: -0.5, z: 0}
   current: {fileID: 394898495}
   smallScale: {x: 0.5, y: 0.5, z: 1}

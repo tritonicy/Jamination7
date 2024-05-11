@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float glidingSpeed;
     [SerializeField] float wallSlideSpeed;
     [SerializeField] float swimmingSpeed = 1.5f;
+    [SerializeField] float runningSpeed;
     [SerializeField] Vector3 extendCircle;
 
     [Header ("Components")]
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private Transform wallCheck;
     private EnemyData enemyData;
     private bool isSmall = false;
+    private bool isRunning = false;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
@@ -95,10 +97,19 @@ public class PlayerController : MonoBehaviour
         }
 
         if(!isWallJumping) {
-            Move();
             FlipSprite();
         }
 
+        if(enemyData.canRunFast) {
+            Run();
+            if(!isRunning) {
+                Move();
+            }
+        }
+        else{
+            Move();
+        }
+        
     }
 
     private void ChangeBody() {
@@ -111,6 +122,15 @@ public class PlayerController : MonoBehaviour
                 wallCheck = current.transform.Find("WallCheck");
                 currentRB = current.GetComponentInChildren<Rigidbody2D>();
             }
+        }
+    }
+    private void Run(){
+        if(Input.GetKey(KeyCode.LeftShift) && FloorTouching.isTouchingFloor) {
+            currentRB.velocity = new Vector2(moveValue.x * moveSpeed * runningSpeed, currentRB.velocity.y);
+            isRunning = true;
+        } 
+        else{
+            isRunning = false;
         }
     }
 
