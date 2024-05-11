@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float swimmingSpeed = 1.5f;
     [SerializeField] float runningSpeed;
     [SerializeField] Vector3 extendCircle;
+    [SerializeField] GameObject mainObject;
 
     [Header ("Components")]
     private Rigidbody2D rb;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private float initialGravityScale;
     private bool isGliding;
     private bool isSwimming;
+    private bool canLeftBody = false;
     private Vector3 originalScale;
     public Vector3 smallScale;
     private Transform wallCheck;
@@ -87,6 +89,11 @@ public class PlayerController : MonoBehaviour
         if(!isWallSliding && enemyData.canSwim) {
             Swim();
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            canLeftBody = true;
+        }
     }
     
     private void FixedUpdate() {
@@ -96,26 +103,38 @@ public class PlayerController : MonoBehaviour
             Glide();
         }
 
-        if(!isWallJumping) {
-            FlipSprite();
-        }
-
-        if(enemyData.canRunFast) {
+        if(enemyData.canRunFast && !isWallJumping) {
             Run();
-            if(!isRunning) {
+            if(!isRunning && !isWallJumping) {
                 Move();
             }
         }
-        else{
+        else if(!isWallJumping){
             Move();
         }
-        
+
+        if (!isWallJumping)
+        {
+            FlipSprite();
+        }
+
+        if (canLeftBody)
+        {
+            LeaveBody();
+            Invoke(nameof(StopLeavingBody), 0.1f);
+        }
     }
 
     private void ChangeBody() {
         if(Input.GetKeyDown(KeyCode.Z)) {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position + new Vector3(extendCircle.x * current.transform.localScale.x, extendCircle.y, extendCircle.z), 0.3f, playerLayer); //localscale duzenlenecek
             if(colliders.Length > 0) {
+
+                if(current == mainObject)
+                {
+                    mainObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+
                 current = colliders[0].gameObject;
                 enemyData = current.GetComponent<EnemyData>();
                 Debug.Log(colliders.Length);
@@ -295,4 +314,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void LeaveBody()
+    {
+        mainObject.transform.position = current.transform.position;
+        mainObject.GetComponent<SpriteRenderer>().enabled = true;
+        current = mainObject;
+        enemyData = current.GetComponent<EnemyData>();
+        wallCheck = current.transform.Find("WallCheck");
+        currentRB = current.GetComponentInChildren<Rigidbody2D>();
+    }
+
+    private void StopLeavingBody()
+    {
+        canLeftBody = false;
+    }
 }
