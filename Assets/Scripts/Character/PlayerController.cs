@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float glidingSpeed;
     [SerializeField] float wallSlideSpeed;
     [SerializeField] float swimmingSpeed = 1.5f;
+    [SerializeField] Vector3 extendCircle;
 
     [Header ("Components")]
     private Rigidbody2D rb;
@@ -35,21 +37,21 @@ public class PlayerController : MonoBehaviour
     private float initialGravityScale;
     private bool isGliding;
     private bool isSwimming;
-    [SerializeField] Transform wallCheck;
+    private Transform wallCheck;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
+    [SerializeField] LayerMask playerLayer;
 
-
-    void Start()
-    {   
-        current = this.gameObject;
-        currentRB = current.GetComponentInChildren<Rigidbody2D>(); 
+    private void Awake() {
+        currentRB = current.GetComponent<Rigidbody2D>();
         initialGravityScale = currentRB.gravityScale;
+        wallCheck = current.transform.Find("WallCheck");
     }
 
     void Update()
     {   
-        WallSlide();
+        ChangeBody();
+        WallSlide(); 
 
         if(isWallSliding && !isSwimming){
             WallJump();
@@ -70,6 +72,23 @@ public class PlayerController : MonoBehaviour
             Move();
             FlipSprite();
         }    
+    }
+
+    private void ChangeBody() {
+        if(Input.GetKeyDown(KeyCode.Z)) {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position + extendCircle * current.transform.localScale.x , 0.3f, playerLayer); //localscale duzenlenecek
+            if(colliders.Length > 0) {
+                current = colliders[0].gameObject;
+                Debug.Log(colliders.Length);
+                wallCheck = current.transform.Find("WallCheck");
+                currentRB = current.GetComponentInChildren<Rigidbody2D>();
+            }
+        }
+    }
+    private void OnDrawGizmos() {
+        if(wallCheck != null) {
+            UnityEditor.Handles.DrawWireDisc(wallCheck.position + extendCircle * current.transform.localScale.x , new Vector3(0, 0, 1), 0.3f);
+        }
     }
 
     private void OnMove(InputValue value) {
@@ -188,7 +207,6 @@ public class PlayerController : MonoBehaviour
         }
         if((coyotaTimeCounter > 0f || FloorTouching.canDoubleJump) && jumpBufferCounter > 0 && !isWalled()) {
             currentRB.velocity = new Vector2(currentRB.velocity.x,jumpValue);
-            Debug.Log("Jumping");
             jumpBufferCounter = 0f;
             FloorTouching.canDoubleJump = !FloorTouching.canDoubleJump;
         
