@@ -11,12 +11,17 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveValue;
     [SerializeField] float jumpValue = 1f;
     [SerializeField] float moveSpeed = 0.5f;
+    [SerializeField] Vector2 wallJumpingPower = new Vector2(8f,16f);
+    [SerializeField] float glidingSpeed;
+    [SerializeField] float wallSlideSpeed;
+    [SerializeField] float swimmingSpeed = 1.5f;
+
     [Header ("Components")]
     private Rigidbody2D rb;
-    [SerializeField] GameObject parent;
     [Header ("Other")]
     [SerializeField] GameObject current;
     private Rigidbody2D currentRB;
+    [Header ("Bools, timers and layers")]
     private float coyotaTimeCounter;
     private float coyotaTime = 0.2f;
     private float jumpBufferCounter;
@@ -27,37 +32,43 @@ public class PlayerController : MonoBehaviour
     private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.2f;
-    [SerializeField] Vector2 wallJumpingPower = new Vector2(8f,16f);
-    [SerializeField] float wallSlideSpeed;
+    private float initialGravityScale;
+    private bool isGliding;
+    private bool isSwimming;
     [SerializeField] Transform wallCheck;
     [SerializeField] LayerMask wallLayer;
+    [SerializeField] LayerMask waterLayer;
 
 
     void Start()
     {   
         current = this.gameObject;
         currentRB = current.GetComponentInChildren<Rigidbody2D>(); 
+        initialGravityScale = currentRB.gravityScale;
     }
 
     void Update()
     {   
         WallSlide();
-        //Jump();
 
-        if(isWallSliding){
+        if(isWallSliding && !isSwimming){
             WallJump();
         }else{
             DoubleJump();
+            //Jump();
         }
 
-        if(!isWallJumping) {
-            FlipSprite();
+        if(!isWallSliding) {
+            Swim();
         }
     }
     
     private void FixedUpdate() {
+        Glide();
+
         if(!isWallJumping) {
             Move();
+            FlipSprite();
         }    
     }
 
@@ -128,6 +139,35 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void Glide() {
+        if(Input.GetKey(KeyCode.E) && currentRB.velocity.y < 0f) {
+            currentRB.gravityScale = 0f;
+            currentRB.velocity = new Vector2(currentRB.velocity.x, -glidingSpeed);
+            isGliding = true;
+        }
+        else{
+            isGliding = false;
+            currentRB.gravityScale = initialGravityScale;
+        }
+    }
+    private void Swim() {
+        if(Physics2D.OverlapCircle(currentRB.gameObject.transform.position, 0.2f, waterLayer)) {
+            currentRB.gravityScale = 0f;
+            isSwimming = true;
+            if(moveValue.y > 0) {
+                currentRB.velocity = new Vector2(currentRB.velocity.x, glidingSpeed * swimmingSpeed);
+            }
+            else{
+                currentRB.velocity = new Vector2(currentRB.velocity.x, -glidingSpeed * swimmingSpeed);
+
+            }
+        }
+        else{
+            isSwimming = false;
+            currentRB.gravityScale = initialGravityScale;
+        }
+    }
+
     private void StopWallJumping() {
         isWallJumping = false;
     }
@@ -148,6 +188,7 @@ public class PlayerController : MonoBehaviour
         }
         if((coyotaTimeCounter > 0f || FloorTouching.canDoubleJump) && jumpBufferCounter > 0 && !isWalled()) {
             currentRB.velocity = new Vector2(currentRB.velocity.x,jumpValue);
+            Debug.Log("Jumping");
             jumpBufferCounter = 0f;
             FloorTouching.canDoubleJump = !FloorTouching.canDoubleJump;
         
