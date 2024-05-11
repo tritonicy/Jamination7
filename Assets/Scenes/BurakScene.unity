@@ -979,7 +979,6 @@ GameObject:
   - component: {fileID: 1226209571}
   - component: {fileID: 1226209572}
   - component: {fileID: 1226209573}
-  - component: {fileID: 1226209574}
   m_Layer: 0
   m_Name: WallCheck
   m_TagString: Untagged
@@ -1080,18 +1079,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1226209574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226209570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13babea951f6add46885457c5123b3ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1763564825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1090,6 @@ GameObject:
   - component: {fileID: 1763564826}
   - component: {fileID: 1763564828}
   - component: {fileID: 1763564827}
-  - component: {fileID: 1763564829}
   m_Layer: 0
   m_Name: WallCheck
   m_TagString: Untagged
@@ -1204,18 +1190,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1763564829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763564825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13babea951f6add46885457c5123b3ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1948852139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,8 +1226,9 @@ MonoBehaviour:
   glidingSpeed: 1
   wallSlideSpeed: 2
   swimmingSpeed: 3
-  extendCircle: {x: 0.28, y: 0, z: 0}
+  extendCircle: {x: 0.55, y: -0.5, z: 0}
   current: {fileID: 394898495}
+  smallScale: {x: 0.5, y: 0.5, z: 1}
   wallLayer:
     serializedVersion: 2
     m_Bits: 512

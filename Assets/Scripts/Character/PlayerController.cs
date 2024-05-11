@@ -37,8 +37,11 @@ public class PlayerController : MonoBehaviour
     private float initialGravityScale;
     private bool isGliding;
     private bool isSwimming;
+    private Vector3 originalScale;
+    public Vector3 smallScale;
     private Transform wallCheck;
     private EnemyData enemyData;
+    private bool isSmall = false;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
@@ -50,14 +53,20 @@ public class PlayerController : MonoBehaviour
         wallCheck = current.transform.Find("WallCheck");
     }
 
+    private void Start()
+    {
+        originalScale = current.transform.gameObject.transform.localScale;
+    }
     void Update()
-    {   
+    {
         ChangeBody();
+        ChangeSize();
 
         if (enemyData.isJumpMaster)
         {
             WallSlide();
         }
+
 
         if(isWallSliding && !isSwimming && enemyData.isJumpMaster){
             WallJump();
@@ -88,12 +97,13 @@ public class PlayerController : MonoBehaviour
         if(!isWallJumping) {
             Move();
             FlipSprite();
-        }    
+        }
+
     }
 
     private void ChangeBody() {
         if(Input.GetKeyDown(KeyCode.Z)) {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position + extendCircle * current.transform.localScale.x , 0.3f, playerLayer); //localscale duzenlenecek
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position + new Vector3(extendCircle.x * current.transform.localScale.x, extendCircle.y, extendCircle.z), 0.3f, playerLayer); //localscale duzenlenecek
             if(colliders.Length > 0) {
                 current = colliders[0].gameObject;
                 enemyData = current.GetComponent<EnemyData>();
@@ -103,9 +113,24 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void ChangeSize()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && isSmall)
+        {
+            isSmall = false;
+            current.gameObject.transform.localScale = Vector3.Lerp(current.gameObject.transform.localScale, originalScale,1f);
+            current.gameObject.transform.position += new Vector3(0f, originalScale.y - smallScale.y, 0f);
+        }
+        else if (Input.GetKeyDown(KeyCode.C) && !isSmall)
+        {
+            isSmall = true;
+            current.gameObject.transform.localScale = Vector3.Lerp(current.gameObject.transform.localScale, smallScale, 1f);
+        }
+    }
     private void OnDrawGizmos() {
         if(wallCheck != null) {
-            UnityEditor.Handles.DrawWireDisc(wallCheck.position + extendCircle * current.transform.localScale.x , new Vector3(0, 0, 1), 0.3f);
+            UnityEditor.Handles.DrawWireDisc(wallCheck.position + new Vector3(extendCircle.x * current.transform.localScale.x, extendCircle.y, extendCircle.z), new Vector3(0, 0, 1), 0.3f);
         }
     }
 
