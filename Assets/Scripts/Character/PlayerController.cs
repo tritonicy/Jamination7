@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private float coyotaTime = 0.2f;
     private float jumpBufferCounter;
     private float jumpBufferTime = 0.5f;
-    private bool isWallSliding;
+    private bool isWallSliding = false;
     private bool isWallJumping;
     private float wallJumpingDirection;
     private float wallJumpingTime = 0.2f;
@@ -40,12 +40,15 @@ public class PlayerController : MonoBehaviour
     private bool isGliding;
     private bool isSwimming;
     private bool canLeftBody = false;
+    private bool isTouchingFloor;
+    private bool canDoubleJump;
     private Vector3 originalScale;
     public Vector3 smallScale;
     private Transform wallCheck;
     private EnemyData enemyData;
     private bool isSmall = false;
     private bool isRunning = false;
+    private int jumpCounter;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
@@ -64,13 +67,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ChangeBody();
-        ChangeSize();
+        if(enemyData.canBeSmall) {
+            ChangeSize();
+        }
 
         if (enemyData.isJumpMaster)
         {
             WallSlide();
         }
-
 
         if(isWallSliding && !isSwimming && enemyData.isJumpMaster){
             WallJump();
@@ -124,22 +128,26 @@ public class PlayerController : MonoBehaviour
             Invoke(nameof(StopLeavingBody), 0.1f);
         }
     }
-
     private void ChangeBody() {
         if(Input.GetKeyDown(KeyCode.Z)) {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position + new Vector3(extendCircle.x * current.transform.localScale.x, extendCircle.y, extendCircle.z), 0.3f, playerLayer); //localscale duzenlenecek
             if(colliders.Length > 0) {
-
                 if(current == mainObject)
                 {
-                    mainObject.GetComponent<SpriteRenderer>().enabled = false;
+                    current = colliders[0].gameObject;
+                    enemyData = current.GetComponent<EnemyData>();
+                    wallCheck = current.transform.Find("WallCheck");
+                    currentRB = current.GetComponentInChildren<Rigidbody2D>();
+                    currentRB.velocity = new Vector2(currentRB.velocity.x, currentRB.velocity.y + 2f);
+                    mainObject.gameObject.SetActive(false);
                 }
-
-                current = colliders[0].gameObject;
-                enemyData = current.GetComponent<EnemyData>();
-                Debug.Log(colliders.Length);
-                wallCheck = current.transform.Find("WallCheck");
-                currentRB = current.GetComponentInChildren<Rigidbody2D>();
+                else{
+                    current = colliders[0].gameObject;
+                    enemyData = current.GetComponent<EnemyData>();
+                    wallCheck = current.transform.Find("WallCheck");
+                    currentRB = current.GetComponentInChildren<Rigidbody2D>();
+                    currentRB.velocity = new Vector2(currentRB.velocity.x, currentRB.velocity.y + 2f);
+                }
             }
         }
     }
@@ -182,7 +190,8 @@ public class PlayerController : MonoBehaviour
     }
     private void Jump() {
         if(FloorTouching.isTouchingFloor) {
-            coyotaTimeCounter = coyotaTime; 
+            coyotaTimeCounter = coyotaTime;
+            jumpCounter = 0;
         }
         else{
             coyotaTimeCounter -= Time.deltaTime;
@@ -194,9 +203,10 @@ public class PlayerController : MonoBehaviour
         else{
             jumpBufferCounter -= Time.deltaTime;
         }
-        if(coyotaTimeCounter > 0f && jumpBufferCounter > 0f) {
+        if(coyotaTimeCounter > 0f && jumpBufferCounter > 0f && jumpCounter < 1) {
             currentRB.velocity = new Vector2(currentRB.velocity.x,jumpValue);
             jumpBufferCounter = 0f;
+            jumpCounter++;
         }
 
         if(currentRB.velocity.y > 0 && Input.GetButtonUp("Jump")) {
@@ -316,6 +326,7 @@ public class PlayerController : MonoBehaviour
 
     private void LeaveBody()
     {
+        mainObject.gameObject.SetActive(true);
         mainObject.transform.position = current.transform.position;
         mainObject.GetComponent<SpriteRenderer>().enabled = true;
         current = mainObject;
