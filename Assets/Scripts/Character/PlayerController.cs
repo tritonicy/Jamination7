@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header ("Scripts")]
-    FloorTouching floorTouching;
     [Header ("Movement")]
     private Vector2 moveValue;
     [SerializeField] float jumpValue = 1f;
     [SerializeField] float moveSpeed = 0.5f;
     [Header ("Components")]
     private Rigidbody2D rb;
+    [SerializeField] GameObject parent;
     [Header ("Other")]
     [SerializeField] GameObject current;
     private Rigidbody2D currentRB;
@@ -21,21 +21,44 @@ public class PlayerController : MonoBehaviour
     private float coyotaTime = 0.2f;
     private float jumpBufferCounter;
     private float jumpBufferTime = 0.5f;
+    private bool isWallSliding;
+    private bool isWallJumping;
+    private float wallJumpingDirection;
+    private float wallJumpingTime = 0.2f;
+    private float wallJumpingCounter;
+    private float wallJumpingDuration = 0.2f;
+    [SerializeField] Vector2 wallJumpingPower = new Vector2(8f,16f);
+    [SerializeField] float wallSlideSpeed;
+    [SerializeField] Transform wallCheck;
+    [SerializeField] LayerMask wallLayer;
 
 
     void Start()
     {   
-        floorTouching = FindObjectOfType<FloorTouching>();
         current = this.gameObject;
-        rb = GetComponent<Rigidbody2D>();
-        currentRB = current.GetComponent<Rigidbody2D>(); 
+        currentRB = current.GetComponentInChildren<Rigidbody2D>(); 
     }
 
     void Update()
     {   
-        Move();
+        WallSlide();
         //Jump();
-        DoubleJump();
+
+        if(isWallSliding){
+            WallJump();
+        }else{
+            DoubleJump();
+        }
+
+        if(!isWallJumping) {
+            FlipSprite();
+        }
+    }
+    
+    private void FixedUpdate() {
+        if(!isWallJumping) {
+            Move();
+        }    
     }
 
     private void OnMove(InputValue value) {
@@ -70,6 +93,44 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool isWalled() {
+        return Physics2D.OverlapCircle(wallCheck.position,0.2f, wallLayer);
+    }
+
+    private void WallSlide() {
+        if(isWalled() && !FloorTouching.isTouchingFloor && moveValue.x != 0f) {
+            isWallSliding = true;
+            currentRB.velocity = new Vector2(currentRB.velocity.x, Mathf.Clamp(currentRB.velocity.y, -wallSlideSpeed, float.MaxValue));
+        }else{
+            isWallSliding = false;
+        }
+    }
+    private void WallJump() {
+        if(isWallSliding) {
+            isWallJumping = false;
+            wallJumpingDirection = -current.gameObject.transform.localScale.x;
+            wallJumpingCounter = wallJumpingTime;
+            CancelInvoke(nameof(StopWallJumping));
+        }
+        else{
+            wallJumpingCounter -= Time.deltaTime;
+        }
+
+        if(Input.GetButtonDown("Jump")) {
+            isWallJumping = true;
+            currentRB.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+            if(current.gameObject.transform.localScale.x != wallJumpingDirection) {
+                FlipSprite();
+            }
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+
+    }
+
+    private void StopWallJumping() {
+        isWallJumping = false;
+    }
 
     private void DoubleJump() {
         if(FloorTouching.isTouchingFloor) {
@@ -85,7 +146,7 @@ public class PlayerController : MonoBehaviour
         else{
             jumpBufferCounter -= Time.deltaTime;
         }
-        if((coyotaTimeCounter > 0f || FloorTouching.canDoubleJump) && jumpBufferCounter > 0) {
+        if((coyotaTimeCounter > 0f || FloorTouching.canDoubleJump) && jumpBufferCounter > 0 && !isWalled()) {
             currentRB.velocity = new Vector2(currentRB.velocity.x,jumpValue);
             jumpBufferCounter = 0f;
             FloorTouching.canDoubleJump = !FloorTouching.canDoubleJump;
@@ -97,6 +158,19 @@ public class PlayerController : MonoBehaviour
             coyotaTimeCounter = 0f;
         }
     }
+    
+    private void FlipSprite() {
+        Vector3 localScale = current.gameObject.transform.localScale;
+        if(current.TryGetComponent<Rigidbody2D>(out Rigidbody2D component)) {
+            if(component.velocity.x > 0 && localScale.x < 0) {
+                localScale.x = -localScale.x;
+            }
+            if(component.velocity.x < 0 && localScale.x > 0) {
 
+                localScale.x = -localScale.x;
+            }
+        current.gameObject.transform.localScale = localScale;
+        }
+    }
 
 }
