@@ -38,12 +38,14 @@ public class PlayerController : MonoBehaviour
     private bool isGliding;
     private bool isSwimming;
     private Transform wallCheck;
+    private EnemyData enemyData;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
 
     private void Awake() {
         currentRB = current.GetComponent<Rigidbody2D>();
+        enemyData = current.GetComponent<EnemyData>();
         initialGravityScale = currentRB.gravityScale;
         wallCheck = current.transform.Find("WallCheck");
     }
@@ -51,22 +53,37 @@ public class PlayerController : MonoBehaviour
     void Update()
     {   
         ChangeBody();
-        WallSlide(); 
 
-        if(isWallSliding && !isSwimming){
-            WallJump();
-        }else{
-            DoubleJump();
-            //Jump();
+        if (enemyData.isJumpMaster)
+        {
+            WallSlide();
         }
 
-        if(!isWallSliding) {
+        if(isWallSliding && !isSwimming && enemyData.isJumpMaster){
+            WallJump();
+        }else{
+
+            if (enemyData.isJumpMaster)
+            {
+                DoubleJump();
+            }
+            else
+            {
+                Jump();
+            }
+        }
+
+        if(!isWallSliding && enemyData.canSwim) {
             Swim();
         }
     }
     
     private void FixedUpdate() {
-        Glide();
+
+        if (enemyData.canGlide)
+        {
+            Glide();
+        }
 
         if(!isWallJumping) {
             Move();
@@ -79,6 +96,7 @@ public class PlayerController : MonoBehaviour
             Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position + extendCircle * current.transform.localScale.x , 0.3f, playerLayer); //localscale duzenlenecek
             if(colliders.Length > 0) {
                 current = colliders[0].gameObject;
+                enemyData = current.GetComponent<EnemyData>();
                 Debug.Log(colliders.Length);
                 wallCheck = current.transform.Find("WallCheck");
                 currentRB = current.GetComponentInChildren<Rigidbody2D>();
