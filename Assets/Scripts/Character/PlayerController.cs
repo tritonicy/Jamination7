@@ -51,9 +51,11 @@ public class PlayerController : MonoBehaviour
     private bool isRunning = false;
     private bool isGrounded;
     private int jumpCounter;
+    public bool canUseLedder;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
+    [SerializeField] LayerMask ladderLayer;
 
     private void Awake() {
         currentRB = current.GetComponent<Rigidbody2D>();
@@ -104,6 +106,8 @@ public class PlayerController : MonoBehaviour
         {
             canLeftBody = true;
         }
+
+        climbLadder();
     }
     
     private void FixedUpdate() {
@@ -173,7 +177,7 @@ public class PlayerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(feetCheck.transform.position ,0.5f);
         foreach (Collider2D collider in colliders)
         {
-            Debug.Log(feetCheck);
+            //Debug.Log(feetCheck);
             if(collider.gameObject.tag == "Ground") {
                 isGrounded = true;
                 return;
@@ -351,6 +355,7 @@ public class PlayerController : MonoBehaviour
         mainObject.transform.position = current.transform.position;
         mainObject.GetComponent<SpriteRenderer>().enabled = true;
         current = mainObject;
+        feetCheck = current.transform.Find("Feet");
         enemyData = current.GetComponent<EnemyData>();
         wallCheck = current.transform.Find("WallCheck");
         currentRB = current.GetComponentInChildren<Rigidbody2D>();
@@ -359,5 +364,13 @@ public class PlayerController : MonoBehaviour
     private void StopLeavingBody()
     {
         canLeftBody = false;
+    }
+
+    private void climbLadder()
+    {
+        if (canUseLedder)
+        {
+            currentRB.velocity = new Vector2(currentRB.velocity.x, moveValue.y * moveSpeed);
+        }
     }
 }
