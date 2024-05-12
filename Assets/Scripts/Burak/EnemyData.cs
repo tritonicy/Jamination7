@@ -9,4 +9,5 @@ public class EnemyData : MonoBehaviour
     public bool isJumpMaster = false;
     public bool canBeSmall = false;
     public bool canGlide = false;
+
 }
