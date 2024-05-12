@@ -7,7 +7,7 @@ public class alper_mainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("alper_scene");
+        SceneManager.LoadSceneAsync("LevelsCopy");
     }
 
     public void QuitGame()
