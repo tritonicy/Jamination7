@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject mainObject;
 
     [Header ("Components")]
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [Header ("Other")]
     [SerializeField] public GameObject current;
-    private Rigidbody2D currentRB;
+    public Rigidbody2D currentRB;
     [Header ("Bools, timers and layers")]
     private float coyotaTimeCounter;
     private float coyotaTime = 0.2f;
@@ -42,16 +42,16 @@ public class PlayerController : MonoBehaviour
     private bool canLeftBody = false;
     private bool isTouchingFloor;
     private bool canDoubleJump;
-    private Transform feetCheck;
+    public Transform feetCheck;
     private Vector3 originalScale;
     public Vector3 smallScale;
-    private Transform wallCheck;
-    private EnemyData enemyData;
+    public Transform wallCheck;
+    public EnemyData enemyData;
     private bool isSmall = false;
     private bool isRunning = false;
     private bool isGrounded;
     private int jumpCounter;
-    private Animator currentAnimator;
+    public Animator currentAnimator;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
