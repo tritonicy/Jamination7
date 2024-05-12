@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header ("Components")]
     private Rigidbody2D rb;
     [Header ("Other")]
-    [SerializeField] GameObject current;
+    [SerializeField] public GameObject current;
     private Rigidbody2D currentRB;
     [Header ("Bools, timers and layers")]
     private float coyotaTimeCounter;
