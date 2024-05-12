@@ -15,10 +15,10 @@ public class DoorScript : MonoBehaviour
     }
     private void Update() {      
         if(isClosed) {
-            this.GetComponent<SpriteRenderer>().enabled = true;
+            this.GetComponent<SpriteRenderer>().enabled = false;
         }
         else{
-            this.GetComponent<SpriteRenderer>().enabled = false;
+            this.GetComponent<SpriteRenderer>().enabled = true;
         }
 
         if(!isClosed && Input.GetKeyDown(KeyCode.E) && isTouchingDoor) {
