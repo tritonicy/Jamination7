@@ -65,12 +65,7 @@ public class CinemachineFollow : MonoBehaviour
     public void TeleportUzayli() {
         playerController.mainObject.SetActive(true);
         playerController.current = playerController.mainObject;
-        playerController.currentAnimator = playerController.current.GetComponent<Animator>();
-        playerController.enemyData = playerController.current.GetComponent<EnemyData>();
-        playerController.wallCheck = playerController.transform.Find("WallCheck");
-        playerController.feetCheck = playerController.transform.Find("Feet");
-        playerController.currentRB = playerController.GetComponentInChildren<Rigidbody2D>();
-        playerController.currentRB.velocity = new Vector2(playerController.currentRB.velocity.x, playerController.currentRB.velocity.y + 2f);
+
         playerController.current.transform.position = levelStartPositions[currentLevel-1].position;
 
     }
