@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3157596804853e14798a2361a5d1d111
+guid: f402a56883051e449a0865577d3853e6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 5
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,8 +69,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,41 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_0
+      name: "z\u0131plama00-Sheet_0"
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 7
-        height: 11
+        x: 23
+        y: 2
+        width: 50
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,125 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28330cb0e919f4c47be2c800d3a70932
-      internalID: 2107682330
+      spriteID: c101bcc4335912b4bb7bf96cb9e981bd
+      internalID: 117240659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_1
+      name: "z\u0131plama00-Sheet_1"
       rect:
         serializedVersion: 2
-        x: 20
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b27dcddc861bb443ba45cca9bc93cf1
-      internalID: 1276032411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_2
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 509e955f5023d4d468a867d5d6e6cef3
-      internalID: 1556307367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_3
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93303370d16c7924c8eb4bcee20e839e
-      internalID: -58756438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_4
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac406a55dc2b77e4d8a0f6261214d9e1
-      internalID: -1973244969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_5
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d45e0c69c2ba4342aa928b69862a0a5
-      internalID: -87231000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_6
-      rect:
-        serializedVersion: 2
-        x: 99
+        x: 118
         y: 1
-        width: 8
-        height: 11
+        width: 58
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,41 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384d31c94afd89d4495b3536572e3346
-      internalID: -1483388446
+      spriteID: f205b8d49d5edec42a9f4d82ed4e8377
+      internalID: 244051918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_7
+      name: "z\u0131plama00-Sheet_2"
       rect:
         serializedVersion: 2
-        x: 116
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 765394b704b49ce48ba769e03a6bcce9
-      internalID: 1409180152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_8
-      rect:
-        serializedVersion: 2
-        x: 131
+        x: 220
         y: 1
-        width: 8
-        height: 11
+        width: 57
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d0c50ba98329de42902583a943a140a
-      internalID: 220060952
+      spriteID: 327dd0de144c8a0469a8805aed4c3e84
+      internalID: -1560860122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_9
+      name: "z\u0131plama00-Sheet_3"
       rect:
         serializedVersion: 2
-        x: 148
-        y: 0
-        width: 7
-        height: 11
+        x: 319
+        y: 2
+        width: 57
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ee5259db8696a4479bc94a46f382eae
-      internalID: 1460959554
+      spriteID: 04020f07f10bcef40b218e32eccf6c6e
+      internalID: 1198179529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_10
+      name: "z\u0131plama00-Sheet_4"
       rect:
         serializedVersion: 2
-        x: 164
+        x: 417
         y: 0
-        width: 7
-        height: 12
+        width: 59
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89151fbab4582134e8fa4608bb49d1e1
-      internalID: 1452397758
+      spriteID: 6cddb77007f3a424ba9755451cc40cdf
+      internalID: -1074124760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_11
+      name: "z\u0131plama00-Sheet_5"
       rect:
         serializedVersion: 2
-        x: 180
-        y: 0
-        width: 7
-        height: 12
+        x: 520
+        y: 1
+        width: 62
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e695b71d4130204ca4fb19b6f2d3b96
-      internalID: -934438042
+      spriteID: 1dde21515d39924478154b1d1268c3e0
+      internalID: -1669669310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_12
+      name: "z\u0131plama00-Sheet_6"
       rect:
         serializedVersion: 2
-        x: 196
-        y: 0
-        width: 7
-        height: 11
+        x: 620
+        y: 6
+        width: 61
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,8 +245,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ff766e5d280f454cb4d4d7d83b74fe7
-      internalID: 529176119
+      spriteID: fea4773006dbf7f4ba76dfb4d76dd15c
+      internalID: -190519775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 8
+        width: 62
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66cc7908909361b4794932840975a00f
+      internalID: 1475669868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 11
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0502cd5c3cb941540a69ddc4a35496b2
+      internalID: 1961872145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 7
+        width: 54
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35223f95d7dfc8478b4891d1fdb7b79
+      internalID: -2105479280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 3
+        width: 58
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2298091d5bc586644bb864062aebee21
+      internalID: 1606162601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 4
+        width: 55
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb687efb883f6684cb8840f3333ca38c
+      internalID: 1096260059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_12"
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 0
+        width: 49
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ceb31917607b3f49a7b8891fa211e7b
+      internalID: -932742392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_13"
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1
+        width: 46
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f02825c50f9b74fb14b80f0aa3194f
+      internalID: -1647659545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "z\u0131plama00-Sheet_14"
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 4
+        width: 50
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6731574ffaea64bac946ba7e189b2f
+      internalID: -185987650
       vertices: []
       indices: 
       edges: []
@@ -412,19 +430,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character_0: 2107682330
-      character_1: 1276032411
-      character_10: 1452397758
-      character_11: -934438042
-      character_12: 529176119
-      character_2: 1556307367
-      character_3: -58756438
-      character_4: -1973244969
-      character_5: -87231000
-      character_6: -1483388446
-      character_7: 1409180152
-      character_8: 220060952
-      character_9: 1460959554
+      "z\u0131plama00-Sheet_0": 117240659
+      "z\u0131plama00-Sheet_1": 244051918
+      "z\u0131plama00-Sheet_10": 1606162601
+      "z\u0131plama00-Sheet_11": 1096260059
+      "z\u0131plama00-Sheet_12": -932742392
+      "z\u0131plama00-Sheet_13": -1647659545
+      "z\u0131plama00-Sheet_14": -185987650
+      "z\u0131plama00-Sheet_2": -1560860122
+      "z\u0131plama00-Sheet_3": 1198179529
+      "z\u0131plama00-Sheet_4": -1074124760
+      "z\u0131plama00-Sheet_5": -1669669310
+      "z\u0131plama00-Sheet_6": -190519775
+      "z\u0131plama00-Sheet_7": 1475669868
+      "z\u0131plama00-Sheet_8": 1961872145
+      "z\u0131plama00-Sheet_9": -2105479280
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

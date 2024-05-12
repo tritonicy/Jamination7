@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     private bool isRunning = false;
     private bool isGrounded;
     private int jumpCounter;
+    private Animator currentAnimator;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         initialGravityScale = currentRB.gravityScale;
         wallCheck = current.transform.Find("WallCheck");
         feetCheck = current.transform.Find("Feet");
+        currentAnimator = current.GetComponent<Animator>();
     }
 
     private void Start()
@@ -72,7 +74,6 @@ public class PlayerController : MonoBehaviour
     {
         ChangeBody();
         FindFeetCollider();
-        Debug.Log(isGrounded);
 
         if(enemyData.canBeSmall) {
             ChangeSize();
@@ -107,6 +108,15 @@ public class PlayerController : MonoBehaviour
         }
 
         climbLadder();
+
+        if(moveValue.x != 0)
+        {
+            currentAnimator.SetBool("run", true);
+        }
+        else
+        {
+            currentAnimator.SetBool("run", false);
+        }
     }
     
     private void FixedUpdate() {
@@ -153,6 +163,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else{
                     current = colliders[0].gameObject;
+                    currentAnimator = current.GetComponent<Animator>();
                     enemyData = current.GetComponent<EnemyData>();
                     wallCheck = current.transform.Find("WallCheck");
                     feetCheck = current.transform.Find("Feet");
@@ -176,7 +187,6 @@ public class PlayerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(feetCheck.transform.position ,0.5f);
         foreach (Collider2D collider in colliders)
         {
-            //Debug.Log(feetCheck);
             if(collider.gameObject.tag == "Ground") {
                 isGrounded = true;
                 return;
@@ -216,6 +226,7 @@ public class PlayerController : MonoBehaviour
         if(isGrounded) {
             coyotaTimeCounter = coyotaTime;
             jumpCounter = 0;
+            Invoke(nameof(SetJumpAnimator), 1f);
         }
         else{
             coyotaTimeCounter -= Time.deltaTime;
@@ -223,6 +234,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")) {
             jumpBufferCounter = jumpBufferTime;
+            currentAnimator.SetBool("jump", true);
         }
         else{
             jumpBufferCounter -= Time.deltaTime;
@@ -254,6 +266,7 @@ public class PlayerController : MonoBehaviour
     private void WallJump() {
         if(isWallSliding) {
             isWallJumping = false;
+            currentAnimator.SetBool("jump", false);
             wallJumpingDirection = -current.gameObject.transform.localScale.x;
             wallJumpingCounter = wallJumpingTime;
             CancelInvoke(nameof(StopWallJumping));
@@ -264,6 +277,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")) {
             isWallJumping = true;
+            currentAnimator.SetBool("jump", true);
             currentRB.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
             if(current.gameObject.transform.localScale.x != wallJumpingDirection) {
@@ -305,11 +319,13 @@ public class PlayerController : MonoBehaviour
 
     private void StopWallJumping() {
         isWallJumping = false;
+        currentAnimator.SetBool("jump", false);
     }
 
     private void DoubleJump() {
         if(FloorTouching.isTouchingFloor) {
-            coyotaTimeCounter = coyotaTime; 
+            coyotaTimeCounter = coyotaTime;
+            currentAnimator.SetBool("jump", false);
         }
         else{
             coyotaTimeCounter -= Time.deltaTime;
@@ -317,6 +333,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")) {
             jumpBufferCounter = jumpBufferTime;
+            currentAnimator.SetBool("jump", true);
         }
         else{
             jumpBufferCounter -= Time.deltaTime;
@@ -358,6 +375,7 @@ public class PlayerController : MonoBehaviour
         enemyData = current.GetComponent<EnemyData>();
         wallCheck = current.transform.Find("WallCheck");
         currentRB = current.GetComponentInChildren<Rigidbody2D>();
+        currentAnimator = current.GetComponent<Animator>();
     }
 
     private void StopLeavingBody()
@@ -389,5 +407,10 @@ public class PlayerController : MonoBehaviour
         {
             currentRB.gravityScale = initialGravityScale;
         }
+    }
+
+    private void SetJumpAnimator()
+    {
+        currentAnimator.SetBool("jump", false);
     }
 }

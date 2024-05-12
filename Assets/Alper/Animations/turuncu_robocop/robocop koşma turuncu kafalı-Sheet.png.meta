@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3157596804853e14798a2361a5d1d111
+guid: e36bd83cad043e74f805f8c74cf541c8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 5
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,41 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_0
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_0"
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 7
-        height: 11
+        x: 32
+        y: 20
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28330cb0e919f4c47be2c800d3a70932
-      internalID: 2107682330
+      spriteID: b332d46ff4326af43aa8b3516343c9fd
+      internalID: -1226165247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_1
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_1"
       rect:
         serializedVersion: 2
-        x: 20
-        y: 0
-        width: 7
-        height: 11
+        x: 134
+        y: 17
+        width: 29
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b27dcddc861bb443ba45cca9bc93cf1
-      internalID: 1276032411
+      spriteID: 56a06141d9400214b894a4010c619606
+      internalID: -964662885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_2
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_2"
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 7
-        height: 11
+        x: 232
+        y: 17
+        width: 27
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 509e955f5023d4d468a867d5d6e6cef3
-      internalID: 1556307367
+      spriteID: 23f2c518b90acef4289dc560dea218c4
+      internalID: 1177541182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_3
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_3"
       rect:
         serializedVersion: 2
-        x: 52
-        y: 0
-        width: 7
-        height: 10
+        x: 328
+        y: 20
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93303370d16c7924c8eb4bcee20e839e
-      internalID: -58756438
+      spriteID: d07a495d6d858df4ba6205b59d9cc009
+      internalID: -1744791775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_4
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_4"
       rect:
         serializedVersion: 2
-        x: 68
-        y: 0
-        width: 7
-        height: 11
+        x: 436
+        y: 18
+        width: 24
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac406a55dc2b77e4d8a0f6261214d9e1
-      internalID: -1973244969
+      spriteID: 78c319cb2c518044cab06c366d77ce6e
+      internalID: 1843828867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_5
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_5"
       rect:
         serializedVersion: 2
-        x: 84
-        y: 0
-        width: 7
-        height: 11
+        x: 534
+        y: 21
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d45e0c69c2ba4342aa928b69862a0a5
-      internalID: -87231000
+      spriteID: a06d248d2518b3743a2ef7a690b1a54c
+      internalID: -1678647266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_6
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_6"
       rect:
         serializedVersion: 2
-        x: 99
-        y: 1
-        width: 8
-        height: 11
+        x: 630
+        y: 19
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384d31c94afd89d4495b3536572e3346
-      internalID: -1483388446
+      spriteID: 66ce28e0f2fa12e43a149af224f1449a
+      internalID: 736919828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_7
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_7"
       rect:
         serializedVersion: 2
-        x: 116
-        y: 0
-        width: 7
-        height: 11
+        x: 730
+        y: 20
+        width: 35
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 765394b704b49ce48ba769e03a6bcce9
-      internalID: 1409180152
+      spriteID: 906efbb0d1045e449a27c11577485cc2
+      internalID: -153035238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_8
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_8"
       rect:
         serializedVersion: 2
-        x: 131
-        y: 1
-        width: 8
-        height: 11
+        x: 835
+        y: 20
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d0c50ba98329de42902583a943a140a
-      internalID: 220060952
+      spriteID: 4cc3b7d8c4f251441ae919b95b818e2a
+      internalID: -66671216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_9
+      name: "robocop ko\u015Fma turuncu kafal\u0131-Sheet_9"
       rect:
         serializedVersion: 2
-        x: 148
-        y: 0
-        width: 7
-        height: 11
+        x: 934
+        y: 20
+        width: 23
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,71 +308,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ee5259db8696a4479bc94a46f382eae
-      internalID: 1460959554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_10
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 0
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89151fbab4582134e8fa4608bb49d1e1
-      internalID: 1452397758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_11
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e695b71d4130204ca4fb19b6f2d3b96
-      internalID: -934438042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_12
-      rect:
-        serializedVersion: 2
-        x: 196
-        y: 0
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ff766e5d280f454cb4d4d7d83b74fe7
-      internalID: 529176119
+      spriteID: 3346106bcf9997a4685d629a1d584da2
+      internalID: -1515930236
       vertices: []
       indices: 
       edges: []
@@ -412,19 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character_0: 2107682330
-      character_1: 1276032411
-      character_10: 1452397758
-      character_11: -934438042
-      character_12: 529176119
-      character_2: 1556307367
-      character_3: -58756438
-      character_4: -1973244969
-      character_5: -87231000
-      character_6: -1483388446
-      character_7: 1409180152
-      character_8: 220060952
-      character_9: 1460959554
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_0": -1226165247
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_1": -964662885
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_2": 1177541182
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_3": -1744791775
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_4": 1843828867
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_5": -1678647266
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_6": 736919828
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_7": -153035238
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_8": -66671216
+      "robocop ko\u015Fma turuncu kafal\u0131-Sheet_9": -1515930236
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
