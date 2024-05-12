@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float swimmingSpeed = 1.5f;
     [SerializeField] float runningSpeed;
     [SerializeField] Vector3 extendCircle;
-    [SerializeField] GameObject mainObject;
+    [SerializeField] public GameObject mainObject;
 
     [Header ("Components")]
     private Rigidbody2D rb;
