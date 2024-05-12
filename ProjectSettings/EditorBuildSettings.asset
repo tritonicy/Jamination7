@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Alper/MainMenu.unity
+    guid: d72cb6a72e1f0b842a36c3f9b4644f47
+  - enabled: 1
+    path: Assets/Alper/alper_scene.unity
+    guid: d0a8b0b8dd6210e48bcc5ea6e102f0ef
+  - enabled: 1
     path: Assets/Scenes/BurakScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

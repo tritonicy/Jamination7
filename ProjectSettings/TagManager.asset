@@ -8,6 +8,7 @@ TagManager:
   - Feet
   - Wall
   - Water
+  - Audio
   layers:
   - Default
   - TransparentFX
