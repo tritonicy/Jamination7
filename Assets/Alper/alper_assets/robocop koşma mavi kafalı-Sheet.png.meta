@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b558dbe7931f61f469707138cc327d7c
+guid: db724d47d4d17234db492bec73e8945d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,218 +101,215 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gate_0
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_0"
       rect:
         serializedVersion: 2
-        x: 1
-        y: 16
-        width: 14
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 432c2451795f98047ac24a458bfe59b7
-      internalID: -307287736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 18
-        width: 14
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 230966513f23c8145b7efa97dd7aee4e
-      internalID: -329082355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_2
-      rect:
-        serializedVersion: 2
-        x: 65
+        x: 32
         y: 20
-        width: 14
-        height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65350601a883d1d42ab3cd3ddf9e66a8
-      internalID: 928469203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_3
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 22
-        width: 14
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11a5e0d4fb8d7ed4aa26bffb6c016cc5
-      internalID: 988607062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_4
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 24
-        width: 14
-        height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95e78cdded1e274479d64fcc8a085013
-      internalID: 1205814720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_5
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 26
-        width: 14
-        height: 6
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c631a16bfb963304684bf3f63de77331
-      internalID: 1218444094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_6
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 28
-        width: 14
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3639c008fdcac3458e6423d16022675
-      internalID: 801585804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gate_7
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 30
-        width: 14
-        height: 2
+        width: 28
+        height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5668a6b9deb467a41b057a83dd3c3a43
-      internalID: -1999359788
+      spriteID: 734dda7f3bd10a64e81b87a6af6a73e1
+      internalID: 275465700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gate_8
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_1"
       rect:
         serializedVersion: 2
-        x: 244
-        y: 30
-        width: 10
-        height: 2
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 134
+        y: 17
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fffa7a667df04f4397a9118f348487f
-      internalID: -1392255572
+      spriteID: 2bf41bec8e313384987f83536a91fd6f
+      internalID: -2120581007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 17
+        width: 27
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a581c8b3c528e45a6ec1a3e376189b
+      internalID: -232460600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 20
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905357b99735d1b4da45ee1c0c2ce832
+      internalID: 1193710269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 18
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1254a5cbe70364a9490acd32f9f7af
+      internalID: 1429726544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 21
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942118f11ef8a874fae9d400baa8cfda
+      internalID: -596409020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 19
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba9ca64eb7624649be598834c442dd5
+      internalID: -1747259065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 20
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7ebb402ec829e489bd44d669d34183
+      internalID: 1688522725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 20
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fb7ea51b8badc4fb6e406d19ff3ec0
+      internalID: -513054622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop ko\u015Fma mavi kafal\u0131-Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 20
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e67139552fddec4c862c99e29f213c6
+      internalID: -1681617581
       vertices: []
       indices: 
       edges: []
@@ -328,15 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gate_0: -307287736
-      gate_1: -329082355
-      gate_2: 928469203
-      gate_3: 988607062
-      gate_4: 1205814720
-      gate_5: 1218444094
-      gate_6: 801585804
-      gate_7: -1999359788
-      gate_8: -1392255572
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_0": 275465700
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_1": -2120581007
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_2": -232460600
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_3": 1193710269
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_4": 1429726544
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_5": -596409020
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_6": -1747259065
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_7": 1688522725
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_8": -513054622
+      "robocop ko\u015Fma mavi kafal\u0131-Sheet_9": -1681617581
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
