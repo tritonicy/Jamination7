@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
                 {
                     current = colliders[0].gameObject;
                     enemyData = current.GetComponent<EnemyData>();
+                    currentAnimator = current.GetComponent<Animator>();
                     wallCheck = current.transform.Find("WallCheck");
                     feetCheck = current.transform.Find("Feet");
                     currentRB = current.GetComponentInChildren<Rigidbody2D>();
@@ -266,7 +267,6 @@ public class PlayerController : MonoBehaviour
     private void WallJump() {
         if(isWallSliding) {
             isWallJumping = false;
-            currentAnimator.SetBool("jump", false);
             wallJumpingDirection = -current.gameObject.transform.localScale.x;
             wallJumpingCounter = wallJumpingTime;
             CancelInvoke(nameof(StopWallJumping));
@@ -283,6 +283,7 @@ public class PlayerController : MonoBehaviour
             if(current.gameObject.transform.localScale.x != wallJumpingDirection) {
                 FlipSprite();
             }
+            Invoke(nameof(SetJumpAnimator), 1f);
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
         }
 
@@ -325,7 +326,7 @@ public class PlayerController : MonoBehaviour
     private void DoubleJump() {
         if(FloorTouching.isTouchingFloor) {
             coyotaTimeCounter = coyotaTime;
-            currentAnimator.SetBool("jump", false);
+            Invoke(nameof(SetJumpAnimator), 1f);
         }
         else{
             coyotaTimeCounter -= Time.deltaTime;
@@ -385,7 +386,7 @@ public class PlayerController : MonoBehaviour
 
     private void climbLadder()
     {
-        if (Physics2D.OverlapCircle(currentRB.gameObject.transform.position, 0.2f, ladderLayer))
+        if (Physics2D.OverlapCircle(currentRB.gameObject.transform.position, 0.5f, ladderLayer))
         {
             if (moveValue.y > 0)
             {

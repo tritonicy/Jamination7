@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: d093c4261cd4f9f46b6e26f9fc692f43
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_0"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 20
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b3f2c7a6dd82b4b881d79cbbe18eae
+      internalID: -925143240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_1"
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 20
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c9208f832273d4dacb983e2ee2dcd8
+      internalID: -1780257577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_2"
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 19
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8725882214d0c2a48be35824b1dd9750
+      internalID: -1936797950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_3"
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 21
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16ee4b85fb71ca44ae5385ceeb8c9ae
+      internalID: -2124894275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 25
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e7db84b83786849817d23ad206e0af
+      internalID: -1974609211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_5"
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 19
+        width: 27
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6559cbf14aec922478f93c4d0fc9ef4e
+      internalID: 7207617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_6"
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 27
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd68f624d5f34a4e9bce4ce5d3379ad
+      internalID: 789790755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_7"
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 28
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ead35c83ebb2374eb1b1c779322d9c6
+      internalID: -1182170441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_8"
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 26
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1398ce24e0f704a9e851425ae0ba15
+      internalID: -445443792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_9"
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 23
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5e109e9f2147a4bbe04db88c9d15f7
+      internalID: -359103353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_10"
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 20
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37932fcc3f89d5740bc8ef1678ccdfec
+      internalID: -1281948141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "robocop z\u0131plama turuncu kafal\u0131-Sheet_11"
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 20
+        width: 77
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee8b6733182fb5458eb46408e5acd08
+      internalID: -996840700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_0": -925143240
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_1": -1780257577
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_10": -1281948141
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_11": -996840700
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_2": -1936797950
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_3": -2124894275
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_4": -1974609211
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_5": 7207617
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_6": 789790755
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_7": -1182170441
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_8": -445443792
+      "robocop z\u0131plama turuncu kafal\u0131-Sheet_9": -359103353
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
