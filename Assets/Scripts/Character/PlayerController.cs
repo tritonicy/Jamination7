@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     private bool isRunning = false;
     private bool isGrounded;
     private int jumpCounter;
-    public bool canUseLedder;
     [SerializeField] LayerMask wallLayer;
     [SerializeField] LayerMask waterLayer;
     [SerializeField] LayerMask playerLayer;
@@ -368,9 +367,27 @@ public class PlayerController : MonoBehaviour
 
     private void climbLadder()
     {
-        if (canUseLedder)
+        if (Physics2D.OverlapCircle(currentRB.gameObject.transform.position, 0.2f, ladderLayer))
         {
-            currentRB.velocity = new Vector2(currentRB.velocity.x, moveValue.y * moveSpeed);
+            if (moveValue.y > 0)
+            {
+                currentRB.gravityScale = 0f;
+                currentRB.velocity = new Vector2(currentRB.velocity.x, glidingSpeed * moveSpeed);
+            }
+            else if (moveValue.y < 0)
+            {
+                currentRB.gravityScale = 0f;
+                currentRB.velocity = new Vector2(currentRB.velocity.x, -glidingSpeed * moveSpeed);
+            }
+            else
+            {
+                currentRB.gravityScale = 0f;
+                currentRB.velocity = new Vector2(currentRB.velocity.x, 0f);
+            }
+        }
+        else
+        {
+            currentRB.gravityScale = initialGravityScale;
         }
     }
 }
