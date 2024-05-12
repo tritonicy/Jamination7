@@ -65,9 +65,7 @@ public class CinemachineFollow : MonoBehaviour
     public void TeleportUzayli() {
         playerController.mainObject.SetActive(true);
         playerController.current = playerController.mainObject;
-
         playerController.current.transform.position = levelStartPositions[currentLevel-1].position;
-
     }
 
 
