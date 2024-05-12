@@ -228,6 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468338489}
   - component: {fileID: 468338488}
+  - component: {fileID: 468338490}
   m_Layer: 0
   m_Name: CloseCam
   m_TagString: Untagged
@@ -289,6 +290,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468338490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468338487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d8a662a5d28443b869fc0b986c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2068362857}
 --- !u!1 &499153297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,6 +4465,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!1 &1772333435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3480637484698522715, guid: e40ee88c422f44748bc3557023fe6096, type: 3}
+  m_PrefabInstance: {fileID: 572625533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1864299230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,6 +4831,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7872881999987970963, guid: fd66af1a1d496d44cb2b8fc80e4da98e, type: 3}
+      propertyPath: current
+      value: 
+      objectReference: {fileID: 1772333435}
+    - target: {fileID: 7872881999987970963, guid: fd66af1a1d496d44cb2b8fc80e4da98e, type: 3}
+      propertyPath: mainObject
+      value: 
+      objectReference: {fileID: 1772333435}
     - target: {fileID: 7872881999987970964, guid: fd66af1a1d496d44cb2b8fc80e4da98e, type: 3}
       propertyPath: m_Name
       value: BurakGameManager
